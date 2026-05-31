@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Intro</title>
+
+    <!-- This is how to include external CSS -->
+    <link rel="stylesheet" href="stylesheet.css" />
+    <style>
+      /* this is for all the tags present in html */
+      * {
+        background-color: peru;
+      }
+
+      /* html_tag { //this will apply to all the tags of type tag.
+        background-color: aqua;
+      } */
+
+      div {
+        background-color: aqua;
+      }
+
+      /* .class_name {}  this will apply css to tags having class_name
+        css applied by class has higher priority
+      */
+      .demo-div {
+        background-color: bisque;
+      }
+
+      /* #id{} this will apply css to tag having id 
+      has highest priority to apply css*/
+      #demo-div-id {
+        background-color: azure;
+      }
+
+      #demo-div-id2 {
+        background-color: palegoldenrod;
+      }
+
+      #demo-div-id3 {
+        background-color: firebrick;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- IN LINE CSS -->
+    <!-- It Has highest importance will override any other CSS-->
+    <div style="background-color: red">DIV 1</div>
+    <!-- IN LINE CSS -->
+
+    <div>DIV 2</div>
+    <div>DIV 3</div>
+
+    <div class="demo-div">This div is with class demo-div</div>
+    <div class="demo-div">This div is with class demo-div</div>
+
+    <div id="demo-div-id">This div is with id demo-div-id</div>
+    <div id="demo-div-id2" class="demo-div">
+      This div is with id demo-div-id2 and have class name as demo-div
+    </div>
+
+    <div id="demo-div-id3" style="background-color: green">
+      DIV with inline css and id demo-div-id3
+    </div>
+
+    <div class="external-file-css">DIV using external file CSS</div>
+  </body>
+</html>
