@@ -1,3 +1,7 @@
 .external-file-css {
-  background-color: greenyellow;
+  background-color: purple;
+}
+
+.priority-class {
+  background-color: pink;
 }

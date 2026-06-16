@@ -13,7 +13,7 @@
 
     #absolute-div {
       position: absolute;
-      top: 40px;
+      top: 50px;
       left: 30px;
       background-color: peru;
     }
@@ -29,6 +29,10 @@
       left: 40px;
     }
 
+    #grandparent {
+      position: relative;
+    }
+
     #child-absolute {
       background-color: firebrick;
       position: absolute;
@@ -42,9 +46,9 @@
     <div>Div3</div>
 
     <br />
-    <div class="tree" id="parent">
+    <div class="tree" id="grandparent">
       Grandparent
-      <div class="tree">
+      <div class="tree" id="parent">
         Parent
         <div class="tree" id="child-absolute">child / current</div>
       </div>

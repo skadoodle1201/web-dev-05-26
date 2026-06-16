@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector_Priority</title>
+    <style>
+      /* Priority In selectors 
+         Element Selector < Class Selector < Id Selector
+       */
+      div {
+        background-color: red;
+      }
+      .internal-css {
+        background-color: aqua;
+      }
+
+      #div4 {
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <div>This will Have a Priotity DIV 1</div>
+    <div class="internal-css">This will Have a Priotity DIV 2</div>
+    <div class="internal-css">This will Have a Priotity DIV 3</div>
+    <div class="internal-css" id="div4">This will Have a Priotity DIV 4</div>
+    <div>This will Have a Priotity DIV 5</div>
+  </body>
+</html>
