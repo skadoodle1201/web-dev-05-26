@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro Flex</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        border: solid 5px black;
+      }
+
+      #outer-div {
+        background-color: bisque;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+
+        /* Postions according to the main axis */
+        /* justify-content: center; */
+        /* justify-content: flex-end; */
+        /* justify-content: flex-start; */
+        /* justify-content: space-around; */
+        /* justify-content: space-evenly; */
+        justify-content: space-between;
+      }
+
+      .inner-div {
+        height: 100px;
+        width: 100px;
+        margin: 20px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer-div">
+      <div class="inner-div" id="div-1">Div 1</div>
+      <div class="inner-div" id="div-2">Div 2</div>
+      <div class="inner-div" id="div-3">Div 3</div>
+    </div>
+  </body>
+</html>

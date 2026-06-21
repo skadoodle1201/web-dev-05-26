@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* this is worng
+       p {
+        background-color: aqua;
+      } */
+
+      /* Works only on direct desendents */
+      #div-id > p {
+        background-color: antiquewhite;
+      }
+
+      /* Counts from starting */
+      li:nth-child(even) {
+        background-color: aqua;
+      }
+
+      /* Counts from end */
+      li:nth-last-child(2) {
+        background-color: aqua;
+      }
+
+      li:last-child {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div-id">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+        eligendi molestiae corporis, velit sit voluptatibus ducimus a soluta
+        numquam eius ipsa. Architecto voluptatibus fugit aliquid nobis sequi at
+        vitae magni!
+      </p>
+
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+          eligendi molestiae corporis, velit sit voluptatibus ducimus a soluta
+          numquam eius ipsa. Architecto voluptatibus fugit aliquid nobis sequi
+          at vitae magni!
+        </p>
+      </div>
+      <h1>Heading</h1>
+    </div>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, eligendi
+      molestiae corporis, velit sit voluptatibus ducimus a soluta numquam eius
+      ipsa. Architecto voluptatibus fugit aliquid nobis sequi at vitae magni!
+    </p>
+
+    <ul>
+      <li>l1</li>
+      <li>l2</li>
+      <li>l3</li>
+      <li>l4</li>
+      <li>l5</li>
+    </ul>
+
+    <ul>
+      LIST 2
+      <li>l1</li>
+      <li>l2</li>
+      <li>l3</li>
+      <li>l4</li>
+      <li>l5</li>
+    </ul>
+  </body>
+</html>

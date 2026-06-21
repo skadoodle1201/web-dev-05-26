@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pliant:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Resume</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        margin: 10px;
+      }
+
+      #name {
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #main {
+        height: 100vh;
+      }
+
+      #contact {
+        margin-top: 0;
+      }
+
+      #heading-name {
+        font-size: 20px;
+        font-weight: 800;
+        font-family: "Poppins", sans-serif;
+      }
+
+      #education-list {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="name">
+        <h1 id="heading-name">Tanish Chaurasia</h1>
+        <div id="contact">
+          <span>tanish.chaurasia@mail.com</span> <span>+91-80000000000</span>
+        </div>
+      </div>
+
+      <div>Summary</div>
+      <div>Work Ex</div>
+
+      <div>
+        <div><h2>Education</h2></div>
+        <div>
+          <ul>
+            <div id="education-list">
+              <li>CBSE 12th</li>
+              <span>2017</span>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
