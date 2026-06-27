@@ -1,25 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 #content {
   height: 100vh;
   width: 100vw;
-  background-color: antiquewhite;
   margin-top: 57px;
-  display: flex;
 }
 
 #content-section {
   width: 70%;
   border-right: solid 1px black;
-  background-color: aqua;
 }
 
 #sidebar {
   width: 30%;
-  background-color: aquamarine;
+  background-color: pink;
 }
 
 #content-nav-div {
@@ -29,7 +21,7 @@
 
 #content-nav {
   border-bottom: solid 1px black;
-  background-color: azure;
+  background-color: white;
   height: 57px;
   margin: 0 20px;
   display: flex;
@@ -47,4 +39,11 @@
 
 .nav-tag:active {
   border-bottom: solid 2px black;
+}
+
+#content-div {
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
