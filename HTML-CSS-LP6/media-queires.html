@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        height: 100vh;
+        width: 100vw;
+        background-color: aquamarine;
+        display: flex;
+      }
+
+      div {
+        /* When we want to apply a property overwriting the original  */
+        background-color: bisque !important;
+      }
+
+      #id1 {
+        width: 50%;
+        height: 100px;
+        background-color: red;
+      }
+
+      #id2 {
+        width: 50%;
+        height: 100px;
+        background-color: pink;
+      }
+
+      @media (width <= 500px) {
+        #container {
+          flex-direction: column;
+        }
+
+        #id1 {
+          width: 100%;
+          height: 50%;
+        }
+
+        #id2 {
+          width: 100%;
+          height: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="id1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam harum
+        consectetur voluptates aspernatur architecto rem qui cumque aliquam,
+        libero voluptatum laborum itaque ipsam modi dolores officia cupiditate
+        nulla fugiat non?
+      </div>
+      <div id="id2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
+        repudiandae nam hic dicta, minus odit praesentium nisi culpa laboriosam
+        corrupti consectetur quasi, tempora totam ducimus illum veritatis. Nam,
+        voluptatum fuga!
+      </div>
+    </div>
+  </body>
+</html>
