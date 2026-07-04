@@ -24,8 +24,9 @@ console.log(thisString + "new string");
 
 let name = "rahul";
 
-console.log(`${thisString} ${name} from node string template ${c}`);
+console.log(`${thisString} ${name} from node string template ${c}`); // String interpolation
 
+// "${}" <- string template literal
 // console.log(
 //   thisString + " " + name + " " + "from node string template" + " " + c,
 // );
