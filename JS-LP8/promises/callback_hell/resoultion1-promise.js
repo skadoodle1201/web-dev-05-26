@@ -39,4 +39,5 @@ function server() {
   }, 1000);
 }
 
+//This is also called promise chaining
 boilWater().then(addTeaLeaves).then(addSugar).then(server);
