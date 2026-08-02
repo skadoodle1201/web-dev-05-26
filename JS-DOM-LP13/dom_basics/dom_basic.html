@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">Hello This is DOM basics</h1>
+    <div class="div-class">This is div 0</div>
+    <p>This is p1</p>
+    <p>This is p2</p>
+    <p>This is p3</p>
+    <p>This is p4</p>
+
+    <div class="div-class">This is div 1</div>
+    <div class="div-class">This is div 2</div>
+    <div class="div-class">This is div 3</div>
+    <div class="div-class">This is div 4</div>
+  </body>
+  <script>
+    const headingElement = document.getElementById("heading"); //Selects element by ID and returns 1 (ID is unique)
+    console.log(headingElement);
+
+    const divElement = document.querySelector(".div-class"); //Selects By classname and returns 1 which ever matches first
+    console.log(divElement);
+
+    const h1Element = document.querySelector("#heading"); //Selects element by ID and returns 1 (ID is unique)
+    console.log(h1Element);
+
+    const paragraphs = document.querySelectorAll("p"); //Selects all the p tags and returns array of elements
+    console.log(paragraphs);
+
+    const divs = document.querySelectorAll(".div-class"); //Selects all the classname and returns array of elements
+    console.log(divs);
+  </script>
+</html>

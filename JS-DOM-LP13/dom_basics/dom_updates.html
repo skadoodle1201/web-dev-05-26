@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">Hello This is DOM basics</h1>
+    <div class="div-class">This is div 0</div>
+    <div id="parent-element">This is needs to be a parent</div>
+  </body>
+  <script>
+    const headingElement = document.getElementById("heading");
+    headingElement.textContent = "Updated from script"; //Updates text content inside the tag
+    headingElement.style.color = "brown"; // update the style of the tag
+    console.log(headingElement);
+
+    const divElement = document.querySelector(".div-class");
+
+    const paragraph = document.createElement("p"); //This creates a empty element
+    paragraph.textContent = "HELLO NEW P TAG FROM SCRIPT";
+
+    const parentElement = document.querySelector("#parent-element"); //Select a parent element where child needs to be added
+    parentElement.style.border = "10px solid black"; //Border for parent element
+    parentElement.appendChild(paragraph); // Add element to a parent node (Parent Element)
+
+    divElement.remove(); // This is used to remove a element
+  </script>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 20px;
+    }
+    .basic-form {
+      border: 2px solid black;
+    }
+
+    .search-google {
+      border: 2px solid red;
+    }
+  </style>
+  <body>
+    <form class="basic-form">
+      <h2>Basic Form</h2>
+      <label for="user">Username:</label>
+      <input id="user" name="username" type="text" />
+
+      <label for="pass">Password:</label>
+      <input id="pass" name="password" type="password" />
+      <button type="submit">Sumbit</button>
+    </form>
+
+    <form action="https://www.google.com/search" class="search-google">
+      <h2>Google Search Form</h2>
+      <label for="search">Search:</label>
+      <input id="search" name="q" type="text" />
+      <button type="submit">Sumbit</button>
+    </form>
+  </body>
+</html>

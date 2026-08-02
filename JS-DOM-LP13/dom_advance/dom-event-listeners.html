@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #click-me {
+        height: 20px;
+        width: 100px;
+        background-color: blue;
+        color: aliceblue;
+      }
+
+      .display-click {
+        display: none;
+      }
+
+      #hover-me{
+        background-color: red;
+      }
+
+      .is-hovered {
+        background-color: aqua !important; 
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="click-me">Show Text !!</input>
+    <div class="display-click">hurray button is clicked!!!!</div>
+
+    <input type="text" id="input-text" placeholder="Add text inside div"/>
+    <div id="show-text">Show your text here -> </div>
+
+    <button id="hover-me">Hover Me !!!</button>
+
+
+  </body>
+
+  <script>
+    const clickMeBtn = document.getElementById("click-me");
+    const displayClickElement = document.querySelector(".display-click");
+    clickMeBtn.addEventListener("click", (event) => {
+      if (event.target.checked) {
+        displayClickElement.style.display = "block";
+      } else {
+        displayClickElement.style.display = "none";
+      }
+    });
+
+    const textInput = document.getElementById("input-text");
+    const showTextElement = document.getElementById("show-text");
+    textInput.addEventListener("input", (event)=> {
+        showTextElement.textContent = "Show your text here -> "
+        showTextElement.textContent += event.target.value
+    })
+
+    const hoverBtn = document.getElementById("hover-me");
+    hoverBtn.addEventListener("mouseenter", ()=>{
+        // hoverBtn.textContent = "HOVEREEDDDD"
+        hoverBtn.classList.add("is-hovered")
+        // hoverBtn.style["background-color"] = "aqua"
+    })
+
+    hoverBtn.addEventListener("mouseleave", ()=>{
+        // hoverBtn.textContent = "Hover Me !!!"
+        hoverBtn.classList.remove("is-hovered")
+        // hoverBtn.style["background-color"] = "red"
+    })
+  </script>
+</html>

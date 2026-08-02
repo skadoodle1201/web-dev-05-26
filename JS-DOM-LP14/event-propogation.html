@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const listElements = document.querySelectorAll("li");
+
+    const newLiItem = document.createElement("li");
+    newLiItem.textContent = 5;
+    const parentUl = document.querySelector("ul");
+    parentUl.appendChild(newLiItem);
+
+    /**
+     * This is a bad way to add event listeners as :
+     * 1. it will create N number of listeners which is not optimized.
+     * 2. it reduces the code maintainability and readability.
+     * 3. adding new items is a nightmare.
+     *
+     *
+     * newLiItem.addEventListener("click", () => {
+     * console.log("HELLO LI CLICKED");
+     * });
+     * listElements.forEach((el) => {
+     *  el.addEventListener("click", () => {
+     *     console.log("HELLO LI CLICKED");
+     *  });
+     * });
+     */
+
+    /** Event Propagation/ Event Bubbling
+     */
+
+    parentUl.addEventListener("click", (event) => {
+      console.log("LI item clicked --> ", event.target.textContent);
+
+      console.log(event.currentTarget, "The parent with event listener"); //Parent on which event listener is attached
+    });
+
+    const newLi = document.createElement("li");
+    newLi.textContent = 6;
+    parentUl.appendChild(newLi);
+
+    const btn = document.createElement("button");
+    btn.textContent = "reset";
+    parentUl.appendChild(btn);
+    btn.addEventListener("click", (event) => {
+      console.log("Reset Everything i am clicked");
+      event.stopPropagation(); // This is used for stopping the event propagation to parent.
+    });
+  </script>
+</html>

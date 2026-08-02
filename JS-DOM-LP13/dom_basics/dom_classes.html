@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red-div {
+        background-color: red;
+        color: aliceblue;
+      }
+
+      .div-class {
+        border: 10px solid black;
+      }
+      .highlight {
+        color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div-class">This is div 0</div>
+  </body>
+  <script>
+    const divElement = document.querySelector(".div-class");
+    divElement.classList.add("red-div");
+    divElement.classList.remove("div-class");
+    divElement.classList.toggle("highlight");
+  </script>
+</html>

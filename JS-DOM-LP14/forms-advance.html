@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #f4f7fb;
+        color: #1f2937;
+        font-family: Arial, sans-serif;
+      }
+
+      div {
+        width: 100%;
+        max-width: 420px;
+        padding: 28px;
+        border: 1px solid #d8dee9;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 10px 25px rgba(31, 41, 55, 0.08);
+      }
+
+      h2 {
+        margin: 0 0 20px;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font: inherit;
+      }
+
+      input:focus {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+        border-color: #2563eb;
+      }
+
+      label[for="terms"] {
+        flex-direction: row;
+        align-items: center;
+        font-weight: 400;
+      }
+
+      input[type="checkbox"] {
+        width: auto;
+      }
+
+      #response {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Student Registration Form</h2>
+      <form id="registration-form">
+        <label for="name">
+          Name: <input id="name" name="student-name" type="text" />
+        </label>
+
+        <label for="age">
+          Age: <input id="age" name="student-age" type="number" />
+        </label>
+
+        <label for="terms">
+          <input id="terms" name="terms" type="checkbox" />
+          I accept the terms and conditions.
+        </label>
+
+        <button id="submit-button" type="submit">Sumbit</button>
+        <button id="reset-button" type="button">Reset</button>
+      </form>
+    </div>
+
+    <div id="response"></div>
+  </body>
+
+  <script>
+    const nameInput = document.getElementById("name");
+    const ageInput = document.getElementById("age");
+    const termsInput = document.getElementById("terms");
+    const submitBtn = document.getElementById("submit-button");
+    const resultDiv = document.getElementById("response");
+    const formEl = document.getElementById("registration-form");
+    const resetButton = document.getElementById("reset-button");
+
+    resetButton.addEventListener("click", () => {
+      formEl.reset(); //Reset Form to intial state.
+    });
+
+    formEl.addEventListener("submit", (event) => {
+      event.preventDefault(); //Prevents Form from redirection. (Ignore default browser behaviour)
+      resultDiv.style.display = "block";
+      const name = nameInput.value.trim();
+
+      if (!name) {
+        resultDiv.textContent = "Please enter a name";
+        return;
+      }
+
+      const age = ageInput.value;
+
+      if (!age || age < 0 || age > 100) {
+        resultDiv.textContent = "Please enter a valid age";
+        return;
+      }
+
+      const isTermsChecked = termsInput.checked;
+      const terms = isTermsChecked ? "accepted" : "not accepted";
+
+      resultDiv.textContent = `Hey ${name}, Your age is ${age}, You have ${terms} terms.`;
+    });
+  </script>
+</html>
