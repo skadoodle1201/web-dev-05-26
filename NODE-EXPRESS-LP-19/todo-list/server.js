@@ -7,85 +7,31 @@ const {
   updateTodoMiddleware,
   overwriteTodoMiddleware,
   createTodoMiddleware,
+  logRequestMiddleware,
 } = require("./middlewares.js");
+const {
+  getTodoController,
+  createTodoController,
+  overwriteController,
+  updateTodoController,
+  deleteTodoController,
+} = require("./controllers.js");
 const TodoList = new TaskManager();
 
 app.use(express.json()); // This is a middleware.
 
+app.use(logRequestMiddleware); //This a global middleware
+
 //API to get todo list
-app.get("/todo", (req, res) => {
-  res.json({
-    message: "Success",
-    data: TodoList.get(),
-  });
-});
+app.get("/todo", getTodoController);
 
-app.post("/todo", createTodoMiddleware, (req, res) => {
-  const todo = req.body.todo;
+app.post("/todo", createTodoMiddleware, createTodoController);
 
-  TodoList.add(todo);
-  res.json({
-    message: "Success",
-  });
-});
+app.put("/todo/:id", overwriteTodoMiddleware, overwriteController);
 
-app.put("/todo/:id", overwriteTodoMiddleware, (req, res) => {
-  const task = req.body.task;
-  const status = req.body.status;
-  const id = req.params.id;
-  console.log(id);
+app.patch("/todo/:id", updateTodoMiddleware, updateTodoController);
 
-  const castedId = Number(id);
-
-  try {
-    // TodoList.overwrite(Number(id), task, status); this is also valid
-    TodoList.overwrite(castedId, task, status);
-  } catch (error) {
-    return res.json({
-      message: error.message,
-    });
-  }
-  res.json({
-    message: "Update Successful",
-  });
-});
-
-app.patch("/todo/:id", updateTodoMiddleware, (req, res) => {
-  const task = req.body.task;
-  const status = req.body.status;
-  const id = req.params.id;
-
-  try {
-    TodoList.update(id, task, status);
-  } catch (error) {
-    return res.json({
-      message: error.message,
-    });
-  }
-
-  res.json({
-    message: "Update Successful",
-  });
-});
-
-app.delete("/todo/:id", (req, res) => {
-  const id = req.params.id;
-  if (!validateId(id)) {
-    return res.json({
-      message: "Invalid Id input!!",
-    });
-  }
-  try {
-    TodoList.delete(id);
-  } catch (error) {
-    return res.json({
-      message: error.message,
-    });
-  }
-  res.json({
-    message: "Success",
-  });
-});
+app.delete("/todo/:id", deleteTodoController);
 
 app.listen(3000, () => {
   console.log("TODO Application running on http://localhost:3000/");

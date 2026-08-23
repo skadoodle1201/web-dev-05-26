@@ -57,8 +57,18 @@ const createTodoMiddleware = (request, response, next) => {
   }
   next();
 };
+
+const logRequestMiddleware = (request, response, next) => {
+  console.log(
+    `[${request.method}] - ${request.url} : Query Params: ${JSON.stringify(request.query)} : BODY : ${JSON.stringify(request.body)}`,
+  );
+
+  next();
+};
+
 module.exports = {
   updateTodoMiddleware,
   overwriteTodoMiddleware,
   createTodoMiddleware,
+  logRequestMiddleware,
 };
