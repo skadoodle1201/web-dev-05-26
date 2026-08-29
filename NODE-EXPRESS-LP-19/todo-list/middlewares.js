@@ -29,19 +29,19 @@ const overwriteTodoMiddleware = (request, response, next) => {
   const status = request.body.status;
   const id = request.params.id;
   if (!validateTask(task)) {
-    return res.json({
+    return response.json({
       message: "Invalid Todo input!!",
     });
   }
 
   if (!validateStatus(status)) {
-    return res.json({
+    return response.json({
       message: "Invalid Status input!!",
     });
   }
 
   if (!validateId(id)) {
-    return res.json({
+    return response.json({
       message: "Invalid Id Input",
     });
   }
@@ -51,7 +51,7 @@ const overwriteTodoMiddleware = (request, response, next) => {
 const createTodoMiddleware = (request, response, next) => {
   const todo = request.body.todo;
   if (!validateTask(todo)) {
-    return res.json({
+    return response.json({
       message: "Invalid Todo input!!",
     });
   }
