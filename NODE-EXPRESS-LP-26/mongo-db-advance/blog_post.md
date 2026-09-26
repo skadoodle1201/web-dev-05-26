@@ -10,6 +10,7 @@ Entities/Collections
 
     1. username
     2. id
+    3. Password
 
 ## Post Entity
 
@@ -27,3 +28,12 @@ Entities/Collections
     3. post ObjectId Post
     4. Created_At Timestamps
     5. Updated_At Timestamps
+
+JWT FLOW
+
+1. npm i jsonwebtoken
+2. Create JWT token after valid password and return token to the user
+3. On protected route create a middleware to verify JWT
+   a) in middleware verify JWT
+4. a) IS VALID let him go through
+   b) IS Invlid throw error
