@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./searchList.css";
 function ProductCardComponent({ productData }) {
   return (
