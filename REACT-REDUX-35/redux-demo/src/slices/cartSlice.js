@@ -21,11 +21,34 @@ const cartSlice = createSlice({
       }
       state.totalCartProducts += 1;
     },
-    // removeItem(state) {
-    //   if (state.quantity > 0) state.quantity -= 1;
-    // },
+    deleteItem(state, params) {
+      const payload = params.payload;
+      const { name } = payload;
+      const productInformation = state.product[name];
+      if (productInformation) {
+        state.totalCartProducts -= productInformation.quantity;
+      }
+      delete state.product[name];
+    },
+    reduceItem(state, params) {
+      const payload = params.payload;
+      const { name } = payload;
+      const productInformation = state.product[name];
+      if (productInformation) {
+        let quantity = productInformation.quantity;
+        if (quantity > 0) {
+          quantity -= 1;
+        }
+        if (quantity == 0) {
+          delete state.product[name];
+        } else {
+          state.product[name].quantity = quantity;
+        }
+        state.totalCartProducts -= 1;
+      }
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions; //Used Where the action needs to be triggered
+export const { addItem, deleteItem, reduceItem } = cartSlice.actions; //Used Where the action needs to be triggered
 export default cartSlice.reducer; // This is used inside the store
